@@ -53,9 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[2] == colors[4] && colors[4] == colors[6]) {
       return colors[2] == Colors.red ? 'Player 1 won' : 'Player 2 won';
-    } else if (allBoxesSelected()) {
-      return 'Nobody won';
     }
+    return 'In progress';
   }
 
   Widget getBox(int index) {
