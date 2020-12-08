@@ -38,44 +38,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String getWinner() {
     if (colors[0] == colors[1] && colors[1] == colors[2]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[3] == colors[4] && colors[4] == colors[5]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[3] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[6] == colors[7] && colors[7] == colors[8]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[6] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[0] == colors[3] && colors[3] == colors[6]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[1] == colors[4] && colors[4] == colors[7]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[1] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[2] == colors[5] && colors[5] == colors[8]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[2] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[0] == colors[4] && colors[4] == colors[8]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[2] == colors[4] && colors[4] == colors[6]) {
-      if (colors[0] == Colors.white) {
-        return '';
-      }
       return colors[2] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (allBoxesSelected()) {
       return 'Nobody won';
