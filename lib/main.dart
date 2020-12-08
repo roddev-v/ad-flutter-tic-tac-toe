@@ -37,28 +37,49 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String getWinner() {
-    if (!allBoxesSelected()) {
-      return '';
-    } else if (colors[0] == colors[1] && colors[1] == colors[2]) {
+    if (colors[0] == colors[1] && colors[1] == colors[2]) {
+      if (colors[0] == Colors.white) {
+        return '';
+      }
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[3] == colors[4] && colors[4] == colors[5]) {
-      return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
+      if (colors[0] == Colors.white) {
+        return '';
+      }
+      return colors[3] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[6] == colors[7] && colors[7] == colors[8]) {
-      return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
+      if (colors[0] == Colors.white) {
+        return '';
+      }
+      return colors[6] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[0] == colors[3] && colors[3] == colors[6]) {
+      if (colors[0] == Colors.white) {
+        return '';
+      }
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[1] == colors[4] && colors[4] == colors[7]) {
-      return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
+      if (colors[0] == Colors.white) {
+        return '';
+      }
+      return colors[1] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[2] == colors[5] && colors[5] == colors[8]) {
-      return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
+      if (colors[0] == Colors.white) {
+        return '';
+      }
+      return colors[2] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[0] == colors[4] && colors[4] == colors[8]) {
+      if (colors[0] == Colors.white) {
+        return '';
+      }
       return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (colors[2] == colors[4] && colors[4] == colors[6]) {
-      return colors[0] == Colors.red ? 'Player 1 won' : 'Player 2 won';
+      if (colors[0] == Colors.white) {
+        return '';
+      }
+      return colors[2] == Colors.red ? 'Player 1 won' : 'Player 2 won';
     } else if (allBoxesSelected()) {
       return 'Nobody won';
     }
-    return '';
   }
 
   Widget getBox(int index) {
@@ -119,6 +140,14 @@ class _MyHomePageState extends State<MyHomePage> {
               style: const TextStyle(fontSize: 20.0),
             ),
           ),
+          FlatButton(
+              onPressed: () {
+                setState(() {
+                  colors = List<Color>.generate(9, (int index) => Colors.white);
+                  player = '1';
+                });
+              },
+              child: const Text('Reset'))
         ],
       ),
     );
